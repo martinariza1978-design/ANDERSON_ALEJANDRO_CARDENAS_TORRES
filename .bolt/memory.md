@@ -4,6 +4,7 @@
 
 - Customer-facing web app with user accounts/sign-in.
 - Tech stack: Vite + React.
+- SPA routing via React Router; deployment target is Vercel.
 
 ## Brand personality & voice
 
@@ -13,12 +14,14 @@
 
 - Login flow exists with email + password fields only.
 - No 2FA UI components (code entry, authenticator setup, SMS step) present.
+- App has multiple routed pages (e.g., dashboard, transfers).
 
 ## Decisions, constraints & rationale
 
 - Authentication is email + password only; no two-factor authentication (2FA) currently implemented.
 - Underlying auth/sign-in system supports authenticator-app codes, so 2FA could be added without replacing the auth provider.
 - No 2FA was added yet — treated as a pending decision, not a constraint.
+- `vercel.json` added at project root with SPA rewrite rule (all routes → index.html) to support client-side routing on Vercel.
 
 ## Open questions & assumptions
 
